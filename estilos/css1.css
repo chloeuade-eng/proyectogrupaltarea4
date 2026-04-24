@@ -13,18 +13,24 @@ header{
     padding: 15px;
 }
 
-/* LOGO */
 header img{
     width: 180px;
 }
 
-/* TITULO */
 h1{
     font-size: 32px;
-    margin: 10px 0 25px 0; /* espacio con el menú */
+    margin: 10px 0 25px 0;
 }
 
 /* NAV */
+nav input{
+    display: none;
+}
+
+nav label{
+    display: none;
+}
+
 nav ul{
     list-style: none;
     padding: 0;
@@ -46,7 +52,7 @@ nav a:hover{
     color: #1DA1C2;
 }
 
-/* TEXTO */
+/* TEXTO GENERAL */
 p{
     font-size: 16px;
     line-height: 1.6;
@@ -54,54 +60,61 @@ p{
     text-align: center;
 }
 
-/* IMAGENES GENERALES */
+/* IMAGENES */
 img{
     max-width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-/* LISTAS (SERVICIOS) */
-li{
-    color: #1B5E7A;
-    font-size: 18px;
-    background-color: #EAF7FC;
-    margin: 10px auto;
-    padding: 15px;
-    border-radius: 10px;
-    width: 70%;
-}
-
-/* SECCION EQUIPO */
+/* INDEX - EQUIPO */
 .equipo{
     text-align: center;
     padding: 30px;
 }
 
-/* TARJETAS */
+.equipo h2{
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+.contenedor-miembros{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
 .miembro{
-    display: inline-block;
-    width: 180px;
-    height: 360px;
-    margin: 15px;
+    width: 220px;
+    min-height: 380px;
     padding: 15px;
     background-color: #EAF7FC;
     border-radius: 12px;
-    vertical-align: top;
-    position: relative; 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-/* IMAGENES EQUIPO */
+
 .miembro img{
     width: 100px;
     height: 100px;
     border-radius: 50%;
     border: 2px solid #0F3D5E;
+    object-fit: cover;
 }
 
-/* LINK */
+.miembro h3{
+    margin: 10px 0;
+}
+
+.miembro p{
+    flex-grow: 1;
+}
+
 .miembro a{
-    display: inline-block;
-    margin-top: 10px;
+    margin-top: auto;
     text-decoration: none;
     color: white;
     background-color: #1DA1C2;
@@ -113,6 +126,62 @@ li{
     background-color: #1590ab;
 }
 
+/* SERVICIOS */
+.servicios{
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #EAF7FC;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.servicios h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.servicios ul{
+    list-style: disc;
+    padding-left: 35px;
+    text-align: left;
+}
+
+.servicios li{
+    background-color: #D6EEF8;
+    margin: 10px 0;
+    padding: 12px 12px 12px 20px;
+    border-radius: 8px;
+}
+
+.servicios li::marker{
+    color: #1DA1C2;
+}
+
+/* CONTACTO */
+.contacto{
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #EAF7FC;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.contacto h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.contacto p{
+    margin: 15px 0;
+}
+
+.contacto a{
+    color: #0F3D5E;
+    font-weight: bold;
+}
+
 /* FOOTER */
 footer{
     background-color: #1DA1C2;
@@ -120,5 +189,84 @@ footer{
     color: white;
     padding: 15px;
     font-size: 14px;
-    margin-top: 20px;
+    margin-top: 40px;
+}
+
+/* TABLET */
+@media all and (max-width: 900px){
+    .miembro{
+        width: 45%;
+    }
+}
+
+/* MOBILE */
+@media all and (max-width: 700px){
+
+    header img{
+        width: 120px;
+    }
+
+    h1{
+        font-size: 26px;
+    }
+
+    nav label{
+        display: block;
+        border: 1px solid #0F3D5E;
+        border-radius: 5px;
+        width: 35px;
+        height: 35px;
+        line-height: 32px;
+        text-align: center;
+        font-size: 24px;
+        background-color: #D6EEF8;
+        margin: 10px auto;
+        cursor: pointer;
+    }
+
+    nav ul{
+        display: none;
+        background-color: #EAF7FC;
+        padding: 10px;
+        margin: 10px auto;
+        width: 220px;
+        border-radius: 10px;
+    }
+
+    nav input:checked ~ ul{
+        display: block;
+    }
+
+    nav li{
+        display: block;
+        margin: 5px 0;
+    }
+
+    nav a{
+        display: block;
+        padding: 10px;
+        background-color: #D6EEF8;
+        border-radius: 8px;
+    }
+
+    nav a:hover{
+        background-color: #1DA1C2;
+        color: white;
+    }
+
+    .contenedor-miembros{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .miembro{
+        width: 90%;
+        min-height: auto;
+    }
+
+    .servicios,
+    .contacto{
+        width: 85%;
+        padding: 20px;
+    }
 }
